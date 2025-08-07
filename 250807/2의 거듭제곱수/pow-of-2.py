@@ -1,7 +1,7 @@
 N = int(input())
 
-cnt = 1
-a = 2
+cnt = 0
+a = 1
 while True:
     a *= 2
     cnt += 1
