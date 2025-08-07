@@ -4,6 +4,6 @@ sum = 0
 for i in range(1, 101):
     
     if sum+i >= N:
-        print(sum)
+        print(i)
         break
     sum += i
