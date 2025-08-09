@@ -15,6 +15,7 @@ while i < N1 and j < N2:
     else:
         i += 1
         cnt = 0
+        j = 0
     
     if cnt == N2:
         print("Yes")
