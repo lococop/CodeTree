@@ -4,7 +4,7 @@ A = input()
 
 def w(A):
     a = A[0]
-    cnt = 0
+    cnt = 1
     for i in range(1, len(A)):
         if a != A[i]:
             cnt += 1
