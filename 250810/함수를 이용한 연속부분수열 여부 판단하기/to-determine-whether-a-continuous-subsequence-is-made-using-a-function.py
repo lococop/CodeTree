@@ -5,21 +5,17 @@ b = list(map(int, input().split()))
 # Please write your code here.
 
 def w(n1, n2, a, b):
+    sum1 = ''
+    sum2 = ''
+
+    for elem in a:
+        sum1 += str(elem)
+    for elem in b:
+        sum2 += str(elem)
     Is = False
-    cnt = 0
-    s = 0
-    for i in range(n1):
-        if cnt == 3:
-            Is = True
-            break
-        for j in range(s, n2):
-            if a[i] == b[j]:
-                
-                cnt += 1
-                s = j+1
-                break
-            else:
-                break
+    if sum2 in sum1:
+        Is = True
+    
 
     return Is
 
