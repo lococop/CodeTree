@@ -5,19 +5,11 @@ b = list(map(int, input().split()))
 # Please write your code here.
 
 def w(n1, n2, a, b):
-    sum1 = ''
-    sum2 = ''
+    for i in range(n1-n2+1):
+        if a[i:i+n2] == b:
+            return True
 
-    for elem in a:
-        sum1 += str(elem)
-    for elem in b:
-        sum2 += str(elem)
-    Is = False
-    if sum2 in sum1:
-        Is = True
-    
-
-    return Is
+    return False
 
 if w(n1,n2,a,b):
     print("Yes")
