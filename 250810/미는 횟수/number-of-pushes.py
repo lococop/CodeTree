@@ -9,7 +9,7 @@ while True:
         break
 
     else:
-        a = a[1:] + a[0]
+        a = a[-1] + a[:-1]
         cnt += 1
     
     if cnt == len(a):
