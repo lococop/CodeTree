@@ -11,7 +11,7 @@ def minus(a,c):
 def odd(a,c):
     return a*c
 def division(a,c):
-    return a/c
+    return a//c
 
 
 if o == '+':
