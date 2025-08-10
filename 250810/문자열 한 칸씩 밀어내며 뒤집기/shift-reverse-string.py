@@ -14,6 +14,7 @@ for elem in queries:
         a = ''
         for i in range(len(input_str)-1, -1, -1):
             a += input_str[i]
-        print(a)
+        input_str = a
+        print(input_str)
 
 
