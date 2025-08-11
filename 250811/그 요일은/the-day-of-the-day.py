@@ -2,7 +2,7 @@ m1, d1, m2, d2 = map(int, input().split())
 A = input()
 
 # Please write your code here.
-days = [0,31, 28, 31, 30, 31, 30, 31,31,30,31,30,31]
+days = [0,31, 29, 31, 30, 31, 30, 31,31,30,31,30,31]
 a = 0
 for i in range(m1):
     a += days[i]
