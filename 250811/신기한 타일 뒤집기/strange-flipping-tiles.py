@@ -13,8 +13,7 @@ MAX_R = 20000
 arr = [[0] for _ in range(MAX_R+1)]
 
 cnt = 0
-if dir[0] == 'L':
-    cnt = 1
+
 for i in range(n):
     if dir[i] == 'R':
         for j in range(cnt+OFFSET, cnt+OFFSET+x[i]):
