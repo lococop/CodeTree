@@ -14,8 +14,8 @@ MAX_R = 200
 arr = [[0]*MAX_R for _ in range(MAX_R)]
 
 for x in range(2):
-    for i in range(x1[x], x2[x]):
-        for j in range(y1[x], y2[x]):
+    for i in range(x1[x]+OFFSET, x2[x]+OFFSET):
+        for j in range(y1[x]+OFFSET, y2[x]+OFFSET):
             arr[i][j] = 1
 
 sum1 = 0
