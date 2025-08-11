@@ -8,8 +8,8 @@ for num, direction in commands:
 
 # Please write your code here.
 
-OFFSET = 10000
-MAX_R = 20000
+OFFSET = 1000
+MAX_R = 2000
 arr = [[0, 0, 0] for _ in range(MAX_R+1)]
 
 cnt = 0
