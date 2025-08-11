@@ -7,7 +7,8 @@ str = [input() for _ in range(n)]
 arr = []
 
 for elem in str:
-    if t in elem:
+
+    if t == elem[:len(t)]:
         arr.append(elem)
     
 arr.sort()
