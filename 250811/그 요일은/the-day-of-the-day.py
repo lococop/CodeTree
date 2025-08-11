@@ -13,7 +13,7 @@ for i in range(m2):
     b += days[i]
 b += d2
 
-c = (b-a)
+c = (b-a)+1
 if A == 'Mon':
     c = c
 elif A == 'Tue':
