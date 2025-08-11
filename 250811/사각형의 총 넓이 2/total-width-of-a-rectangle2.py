@@ -13,7 +13,7 @@ OFFSET = 100
 MAX_R = 200
 arr = [[0]*(MAX_R+1) for _ in range(MAX_R+1)]
 
-for x in range(2):
+for x in range(n):
     for i in range(x1[x]+OFFSET, x2[x]+OFFSET):
         for j in range(y1[x]+OFFSET, y2[x]+OFFSET):
             arr[i][j] = 1
