@@ -11,7 +11,7 @@ for _ in range(n):
 
 OFFSET = 100
 MAX_R = 200
-arr = [[0]*MAX_R for _ in range(MAX_R)]
+arr = [[0]*(MAX_R+1) for _ in range(MAX_R+1)]
 
 for x in range(2):
     for i in range(x1[x]+OFFSET, x2[x]+OFFSET):
