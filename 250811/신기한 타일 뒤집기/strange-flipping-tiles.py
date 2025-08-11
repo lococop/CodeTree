@@ -18,12 +18,12 @@ for i in range(n):
     if dir[i] == 'R':
         for j in range(cnt+OFFSET, cnt+OFFSET+x[i]):
             arr[j] = 1
-            cnt += 1
+        cnt += x[i]-1
 
     elif dir[i] == 'L':
-        for j in range(cnt+OFFSET-1, cnt+OFFSET-x[i]-1, -1):
+        for j in range(cnt+OFFSET, cnt+OFFSET-x[i], -1):
             arr[j] = 2
-            cnt -= 1
+        cnt -= x[i]-1
 black = 0
 white = 0
 
@@ -35,3 +35,4 @@ for elem in arr:
 
 
 print(white, black)
+
