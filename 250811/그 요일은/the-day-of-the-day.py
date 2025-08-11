@@ -13,21 +13,21 @@ for i in range(m2):
     b += days[i]
 b += d2
 
-c = (b-a)+1
+c = (b-a)
 if A == 'Mon':
     c = c
 elif A == 'Tue':
-    c += 1
+    c -= 1
 elif A == 'Wed':
-    c += 2
+    c -= 2
 elif A == 'Thu':
-    c += 3
+    c -= 3
 elif A == 'Fri':
-    c += 4
+    c -= 4
 elif A == 'Sat':
-    c += 5
+    c -= 5
 elif A == 'Sun':
-    c += 6
+    c -= 6
 
-print(c//7)
+print(c//7+1)
 
