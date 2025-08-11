@@ -1,17 +1,22 @@
+import sys
+
 n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
-# Please write your code here.
-import sys
-max_n = -sys.maxsize
+# 최대 끝점을 찾아서 배열의 크기를 정합니다.
+max_end = 0
+for start, end in segments:
+    if end > max_end:
+        max_end = end
 
-for elem in segments:
-    if max_n < elem[1]:
-        max_n = elem[1]
+# 배열의 크기를 최대 끝점 + 1로 설정하여 인덱스 에러를 방지합니다.
+# 예를 들어 최대 끝점이 15라면, 인덱스 15에 접근할 수 있도록 크기를 16으로 만듭니다.
+arr = [0] * (max_end + 1)
 
-arr = [0]*(max_n+1)
+# 각 구간을 순회하며 배열에 값을 더합니다.
+for start, end in segments:
+    for i in range(start, end):
+        arr[i] += 1
 
-for elem in segments:
-    for j in range(elem[0],elem[1]):
-        arr[j] += 1
+# 배열에서 최댓값을 찾아 출력합니다.
 print(max(arr))
