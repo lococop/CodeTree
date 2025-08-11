@@ -8,11 +8,12 @@ def w(n, arr):
     if n == 0:
         return arr[0]
 
-    if arr[n-1] > w(n-1, arr):
+    prev = w(n-1, arr)
+    if arr[n-1] > prev:
         return arr[n-1]
     
     else:
-        return w(n-1, arr)
+        return prev
 
 
 print(w(n, arr))
