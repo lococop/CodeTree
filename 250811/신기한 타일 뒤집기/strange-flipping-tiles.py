@@ -8,9 +8,9 @@ for num, direction in commands:
 
 # Please write your code here.
 
-OFFSET = 10000
-MAX_R = 20000
-arr = [[0] for _ in range(MAX_R+1)]
+OFFSET = 100000
+MAX_R = 200000
+arr = [0] * (MAX_R + 1)
 
 cnt = 0
 
