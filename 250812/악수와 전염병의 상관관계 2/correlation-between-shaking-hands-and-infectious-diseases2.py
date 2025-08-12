@@ -22,18 +22,23 @@ Developer_Arr.sort(key=lambda x:x.time)
 
 # 감염자 리스트
 Infect_P = [P]
-
+HandLimit = [K]*N
 for i in range(T):
-    if K != 0:
-        if Developer_Arr[i].A in Infect_P or Developer_Arr[i].B in Infect_P:    # 감염자 리스트에 A,B가 있다면
-            # 둘 중 한명이 감염자가 아니고 악수 횟수가 남아 있다면 새로운 감염자를 추가한다.
-            if Developer_Arr[i].A not in Infect_P:
-                Infect_P.append(Developer_Arr[i].A)
-                result[Developer_Arr[i].A-1] = 1
-            elif Developer_Arr[i].B not in Infect_P:
-                Infect_P.append(Developer_Arr[i].B)
-                result[Developer_Arr[i].B-1] = 1
-            K -= 1  # 횟수가 남아있다면 차감
+    if Developer_Arr[i].A in Infect_P or Developer_Arr[i].B in Infect_P:    # 감염자 리스트에 A,B가 있다면
+        
+        if Developer_Arr[i].A in Infect_P and Developer_Arr[i].B in Infect_P:      # 둘 다 감염자라면 횟수를 각각 횟수를 차감한다.
+            HandLimit[Developer_Arr[i].A-1] -= 1
+            HandLimit[Developer_Arr[i].B-1] -= 1
+        # 둘 중 한명이 감염자가 아니고 악수 횟수가 남아 있다면 새로운 감염자를 추가한다.
+        elif Developer_Arr[i].A not in Infect_P and HandLimit[Developer_Arr[i].B-1] > 0:
+            Infect_P.append(Developer_Arr[i].A)
+            result[Developer_Arr[i].A-1] = 1
+            HandLimit[Developer_Arr[i].B-1] -= 1
+        elif Developer_Arr[i].B not in Infect_P and HandLimit[Developer_Arr[i].A-1] > 0:
+            Infect_P.append(Developer_Arr[i].B)
+            result[Developer_Arr[i].B-1] = 1
+            HandLimit[Developer_Arr[i].A-1] -= 1
+    
 
 
 for elem in result:
