@@ -16,9 +16,9 @@ for _ in range(m):
 
 # Please write your code here.
 cnt = 0
-OFFSET = 1000
-arr1 = [0]*2000
-arr2 = [0]*2000
+OFFSET = 10000
+arr1 = [0]*20000
+arr2 = [0]*20000
 
 cnt = 0
 time1 = 0
