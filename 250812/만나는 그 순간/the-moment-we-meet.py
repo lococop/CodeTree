@@ -16,7 +16,7 @@ for _ in range(m):
 
 # Please write your code here.
 cnt = 0
-OFFSET = 100000  # 최대 이동 시간보다 훨씬 크게
+OFFSET = 1000000  # 최대 이동 시간보다 훨씬 크게
 SIZE = OFFSET * 2 + 5
 arr1 = [0] * SIZE
 arr2 = [0] * SIZE
