@@ -17,6 +17,7 @@ def in_range(x, y):
 
 char = 66
 
+
 for _ in range(2, n*m+1):
     dx, dy = x + dxs[move_dir], y + dys[move_dir]
     if not in_range(dx,dy) or arr[dx][dy] != 0:
@@ -25,7 +26,7 @@ for _ in range(2, n*m+1):
     x, y = x + dxs[move_dir], y + dys[move_dir]
     arr[x][y] = chr(char)
     char += 1
-    if char == 90:
+    if char == 91:
         char = 65
 
 for i in range(n):
