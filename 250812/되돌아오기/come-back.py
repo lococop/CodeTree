@@ -32,4 +32,7 @@ for i in range(N):
     if Is:
         break
 
-print(time)
+if not Is:
+    print(-1)
+else:
+    print(time)
