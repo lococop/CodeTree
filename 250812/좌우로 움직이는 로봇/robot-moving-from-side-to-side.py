@@ -20,11 +20,11 @@ for _ in range(m):
 # 위치가 저장된 배열을 순회하면서 위치정보가 같아지는 순간의 횟수를 구한다.
 
 # 시간에 따른 위치정보 배열
-Size = 1000000
-A_Location = [0]*Size
-B_Location = [0]*Size
-
 MAX_T = max(sum(t), sum(t_b))   # 최대 움직이는 시간
+A_Location = [0]*(MAX_T+1)
+B_Location = [0]*(MAX_T+1)
+
+
 
 LocA = 0
 time = 0
