@@ -15,7 +15,8 @@ for i in range(n):
     else:
         cnt = 1
     
-    if Max_n == 1:
-        Max_n = 0
+
+if Max_n == 1:
+    Max_n = 0
 
 print(Max_n)
