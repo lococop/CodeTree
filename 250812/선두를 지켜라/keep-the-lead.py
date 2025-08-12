@@ -35,26 +35,23 @@ min_t = min(sum1, sum2)
 
 
 
-distance1 = 0
 time1 = 0
+distance1 = 0
 for i in range(n):
-    temp = v[i]/t[i]
-    for j in range(time1+1, time1+t[i]+1):
+    for _ in range(t[i]):
         time1 += 1
-        distance1 += temp
-        arr1[j] = distance1
+        distance1 += v[i]
+        arr1[time1] = distance1
 
-        
-
-
-distance2 = 0
+# B 이동 기록
 time2 = 0
+distance2 = 0
 for i in range(m):
-    temp = v2[i]/t[i]
-    for j in range(time2+1, time2+t2[i]+1):
+    for _ in range(t2[i]):
         time2 += 1
-        distance2 += temp
-        arr2[j] = distance2
+        distance2 += v2[i]
+        arr2[time2] = distance2
+
 
 
 
