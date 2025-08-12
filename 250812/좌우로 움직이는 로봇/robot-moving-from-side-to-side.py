@@ -24,6 +24,8 @@ Size = 1000000
 A_Location = [0]*Size
 B_Location = [0]*Size
 
+MAX_T = max(sum(t), sum(t_b))   # 최대 움직이는 시간
+
 LocA = 0
 time = 0
 for i in range(n):
@@ -37,6 +39,8 @@ for i in range(n):
             LocA -= 1
             A_Location[j] = LocA
         time += t[i]
+for i in range(time+1, MAX_T+1):
+    A_Location[i] = LocA
 
 
 LocB = 0
@@ -52,29 +56,19 @@ for i in range(m):
             LocB -= 1
             B_Location[j] = LocB
         timeB += t_b[i]
+for i in range(timeB+1, MAX_T+1):
+    B_Location[i] = LocB
 
-MAX_T = max(sum(t), sum(t_b))   # 최대 움직이는 시간
 
 move_cnt = 0
 
-if sum(t) < sum(t_b):
-    j = 2
-    for i in range(2, MAX_T+1):
-        
-        
-        if A_Location[j] == B_Location[i] and A_Location[j-1] != B_Location[i-1]:
-            move_cnt += 1
-        if j < sum(t):
-            j += 1
-else:
-    j = 2
-    for i in range(2, MAX_T+1):
-        
-        
-        if A_Location[i] == B_Location[j] and A_Location[i-1] != B_Location[j-1]:
-            move_cnt += 1
-        if j < sum(t):
-            j += 1
+
+
+for i in range(2, MAX_T+1):
+
+    if A_Location[i] == B_Location[i] and A_Location[i-1] != B_Location[i-1]:
+        move_cnt += 1
+
 
 print(move_cnt)
 
