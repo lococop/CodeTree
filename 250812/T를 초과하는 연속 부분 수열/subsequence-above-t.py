@@ -9,14 +9,13 @@ Max_n = -sys.maxsize
 cnt = 0
 
 for i in range(n):
-    if i == 0 or (arr[i] > t and arr[i-1] > t):
+    if arr[i] > t:
         cnt += 1
         Max_n = max(Max_n, cnt)
     else:
-        cnt = 1
+        cnt = 0
     
 
-if Max_n == 1:
-    Max_n = 0
+
 
 print(Max_n)
