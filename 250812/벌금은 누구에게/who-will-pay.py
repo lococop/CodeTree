@@ -8,7 +8,7 @@ arr = [0]*N
 for i in range(M):
 
     arr[student[i]-1] += 1
-    print(arr)
+    
     if arr[student[i]-1] >= K:
         print(student[i])
         break
