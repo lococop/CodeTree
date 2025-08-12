@@ -5,9 +5,9 @@ arr = [int(input()) for _ in range(n)]
 import sys
 
 Max_n = -sys.maxsize
-cnt = 1
+cnt = 0
 for i in range(n):
-    if arr[i] == arr[i-1]:
+    if i == 0 or arr[i] == arr[i-1]:
         cnt += 1
     if arr[i] != arr[i-1]:
         cnt = 1
