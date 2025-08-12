@@ -16,9 +16,10 @@ for _ in range(m):
 
 # Please write your code here.
 cnt = 0
-OFFSET = 10000
-arr1 = [0]*20000
-arr2 = [0]*20000
+OFFSET = 100000  # 최대 이동 시간보다 훨씬 크게
+SIZE = OFFSET * 2 + 5
+arr1 = [0] * SIZE
+arr2 = [0] * SIZE
 
 cnt = 0
 time1 = 0
@@ -55,11 +56,10 @@ for i in range(m):
 
 
 
-max_time = min(sum(t), sum(t2))
-for i in range(1, max_time + 1):
-    if arr1[i + OFFSET] == arr2[i + OFFSET]:
+for i in range(1, sum(t)+1):
+    if arr1[i+OFFSET] == arr2[i+OFFSET]:
         print(i)
         break
-else:
-    print(-1)
+    if i == sum(t):
+        print(-1)
     
