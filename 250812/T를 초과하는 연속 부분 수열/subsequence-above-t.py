@@ -17,4 +17,7 @@ for i in range(n):
     if Max_n < cnt:
         Max_n = cnt
 
+    if Max_n == 1:
+        Max_n = 0
+
 print(Max_n)
