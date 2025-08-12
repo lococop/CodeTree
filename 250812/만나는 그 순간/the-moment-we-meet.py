@@ -55,10 +55,11 @@ for i in range(m):
 
 
 
-for i in range(1, sum(t)+1):
-    if arr1[i+OFFSET] == arr2[i+OFFSET]:
+max_time = min(sum(t), sum(t2))
+for i in range(1, max_time + 1):
+    if arr1[i + OFFSET] == arr2[i + OFFSET]:
         print(i)
         break
-    if i == sum(t):
-        print(-1)
+else:
+    print(-1)
     
