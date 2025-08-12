@@ -11,12 +11,10 @@ cnt = 0
 for i in range(n):
     if i == 0 or (arr[i] > arr[i-1] and arr[i] > t and arr[i-1] > t):
         cnt += 1
-    if (arr[i] < arr[i-1] or arr[i] < t or arr[i-1] < t):
+        Max_n = max(Max_n, cnt)
+    else:
         cnt = 1
     
-    if Max_n < cnt:
-        Max_n = cnt
-
     if Max_n == 1:
         Max_n = 0
 
