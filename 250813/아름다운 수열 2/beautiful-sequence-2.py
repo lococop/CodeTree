@@ -6,12 +6,14 @@ B = list(map(int, input().split()))
 
 total_cnt = 0
 for i in range(N-M+1):
-
     cnt = 0
 
+    temp = B.copy()
+
     for j in range(i, i+M):
-        if A[j] in B:
+        if A[j] in temp:
             cnt += 1
+            temp.remove(A[j])
         
         if cnt == M:
             total_cnt += 1
