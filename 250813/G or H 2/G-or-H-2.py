@@ -33,7 +33,8 @@ for i in range(size):
                 min_x = min(min_x, k)
                 max_x = max(max_x, k)
         
-        if cntG == cntH and cntG != 0 and cntH != 0:
+        if (cntG == cntH and cntG != 0) or (cntG > 0 and cntH == 0) or (cntH > 0 and cntG == 0):
+
             max_size = max(max_size, max_x-min_x)
 
 if max_size == -sys.maxsize:
