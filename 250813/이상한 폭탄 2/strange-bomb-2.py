@@ -6,6 +6,10 @@ import sys
 
 max_n = -sys.maxsize
 
+if N == K:
+    K = N-1
+    
+
 for i in range(N-(K+1)+1):
     for j in range(i, i+K+1):
         if num[i:i+K+1].count(num[j]) >= 2:
