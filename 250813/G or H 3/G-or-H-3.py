@@ -11,7 +11,7 @@ for _ in range(n):
 # K 크기의 영역으로 1씩 증가하면서 그 영역에 알파벳에 따른 점수의 합이 최대가 되는 값을 찾는 문제
 
 size = 10001
-arr = [0]*size
+arr = ['']*size
 
 # 배열 안에 위치에 맞는 값을 할당
 for i in range(n):
@@ -21,7 +21,7 @@ import sys
 max_score = -sys.maxsize
 
 
-for i in range(1, max(x)+1-k):
+for i in range(1, size-k):
 
     total = 0
     for j in range(i, i+k+1):
