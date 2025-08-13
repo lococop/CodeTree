@@ -14,7 +14,7 @@ def work(tem, machine):
 import sys
 max_q = -sys.maxsize
 
-for tem in range(0, 31):
+for tem in range(0, 1001):
     sum_q = 0
     for machine in range(N):
         sum_q += work(tem, machine)
