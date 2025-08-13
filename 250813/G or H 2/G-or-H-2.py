@@ -16,14 +16,14 @@ max_size = -sys.maxsize
 
 for i in range(size):
 
-    for j in range(size-i):
+    for j in range(i+1, size):
 
         cntG = 0
         cntH = 0
 
         min_x = sys.maxsize
         max_x = -sys.maxsize
-        for k in range(i, i+j):
+        for k in range(i, j):
             if arr[k] == 'G':
                 cntG += 1
                 min_x = min(min_x, k)
@@ -34,7 +34,7 @@ for i in range(size):
                 max_x = max(max_x, k)
         
         if cntG == cntH and cntG != 0 and cntH != 0:
-            max_size = max(max_size, abs(max_x-min_x))
+            max_size = max(max_size, max_x-min_x)
 
 if max_size == -sys.maxsize:
     print(0)
