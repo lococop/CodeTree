@@ -9,7 +9,8 @@ for _ in range(N):
 
 # Please write your code here.
 
-arr = [0]*101
+size = 100
+arr = [0]*(size+1)
 
 for i in range(N):
     arr[pos[i]] += candy[i]
@@ -18,8 +19,7 @@ for i in range(N):
 import sys
 max_candy = -sys.maxsize
 
-for i in range(1, max(pos)-K*2+1):
-
+for i in range(1, size-K*2+1):
     sum_candy = 0
     for j in range(i, i+2*K+1):
         sum_candy += arr[j]
