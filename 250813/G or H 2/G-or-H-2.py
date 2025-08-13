@@ -14,9 +14,9 @@ for i in range(n):
 import sys
 max_size = -sys.maxsize
 
-for i in range(size):
+for i in range(size+1):
 
-    for j in range(i+1, size):
+    for j in range(i+1, size+1):
 
         cntG = 0
         cntH = 0
@@ -39,6 +39,7 @@ for i in range(size):
 
 if max_size == -sys.maxsize:
     print(0)
+
 else:
     print(max_size)
         
