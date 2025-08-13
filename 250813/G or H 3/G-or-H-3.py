@@ -21,7 +21,7 @@ import sys
 max_score = -sys.maxsize
 
 
-for i in range(1, max(x)+2-k):
+for i in range(1, max(x)+1-k):
 
     total = 0
     for j in range(i, i+k+1):
@@ -29,7 +29,8 @@ for i in range(1, max(x)+2-k):
             total += 1
         elif arr[j] == 'H':
             total += 2
-        
+    
+    
     max_score = max(max_score, total)
 
 print(max_score)
