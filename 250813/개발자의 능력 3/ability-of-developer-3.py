@@ -13,7 +13,7 @@ def get_diff(i, j, k):
 
 for i in range(len(abilities)):
     for j in range(i+1, len(abilities)):
-        for k in range(i+2, len(abilities)):
+        for k in range(j+1, len(abilities)):
 
             min_diff = min(min_diff, get_diff(i, j, k))
 
