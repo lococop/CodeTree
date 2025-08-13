@@ -12,7 +12,8 @@ for _ in range(N):
 arr = [0]*101
 
 for i in range(N):
-    arr[pos[i]] = candy[i]
+    arr[pos[i]] += candy[i]
+
 
 import sys
 max_candy = -sys.maxsize
