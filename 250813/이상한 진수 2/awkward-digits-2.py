@@ -9,8 +9,13 @@ for i in range(len(a)):
         Max_Num += '1'
         Max_Num += a[i+1:]
         break
+    elif i == len(a)-1:
+        Max_Num += '0'
+        break
     else:
         Max_Num += a[i]
+
+    
 
 ans = 0
 
