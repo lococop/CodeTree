@@ -3,43 +3,41 @@ people = [tuple(input().split()) for _ in range(n)]
 pos = [int(p[0]) for p in people]
 alpha = [p[1] for p in people]
 
-# Please write your code here.
-
-size = 100
-arr = ['0']*(size+1)
+arr_size = 101
+arr = ['0'] * arr_size
 
 for i in range(n):
     arr[pos[i]] = alpha[i]
 
-import sys
-max_size = -sys.maxsize
+max_size = 0
 
-for i in range(size+1):
-
-    for j in range(i+1, size+1):
+for i in range(arr_size):
+    for j in range(i + 1, arr_size):
+        
+        if arr[i] == '0' and arr[j] == '0':
+            continue
 
         cntG = 0
         cntH = 0
-
-        min_x = sys.maxsize
-        max_x = -sys.maxsize
-        for k in range(i, j):
+        
+        for k in range(i, j + 1):
             if arr[k] == 'G':
                 cntG += 1
-                min_x = min(min_x, k)
-                max_x = max(max_x, k)
             elif arr[k] == 'H':
                 cntH += 1
-                min_x = min(min_x, k)
-                max_x = max(max_x, k)
         
-        if (cntG == cntH and cntG != 0) or (cntG > 0 and cntH == 0) or (cntH > 0 and cntG == 0):
+        if (cntG == cntH and cntG > 0) or (cntG > 0 and cntH == 0) or (cntH > 0 and cntG == 0):
+            first_person = -1
+            last_person = -1
+            
+            for k in range(i, j + 1):
+                if arr[k] != '0':
+                    if first_person == -1:
+                        first_person = k
+                    last_person = k
+            
+            if first_person != -1:
+                current_size = last_person - first_person
+                max_size = max(max_size, current_size)
 
-            max_size = max(max_size, max_x-min_x)
-
-if max_size == -sys.maxsize:
-    print(0)
-
-else:
-    print(max_size)
-        
+print(max_size)
