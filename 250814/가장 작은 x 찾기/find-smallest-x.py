@@ -9,7 +9,7 @@ import sys
 
 min_n = sys.maxsize
 
-for num in range(min(a), max(b)):
+for num in range(min(a), max(b)+1):
 
     temp = num*2
     for i in range(n):
