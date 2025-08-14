@@ -5,26 +5,25 @@ a, b = list(a), list(b)
 
 # Please write your code here.
 
-import sys
+MAX_NUM = 10000
 
-min_n = sys.maxsize
 
-for num in range(min(a), max(b)+1):
+def satisfy(num):
 
-    temp = num*2
     for i in range(n):
 
-        if a[i] > temp or temp > b[i]:
-            continue
-        
-        temp *= 2
+        num *= 2
 
-        if i == n-1:
-            
-            min_n = min(min_n, num)
+        if num < a[i] or num > b[i]:
+            return False
+    
+    return True
 
+for num in range(1, MAX_NUM + 1 ):
 
-print(min_n)
+    if satisfy(num):
+        print(num)
+        break
     
         
         
