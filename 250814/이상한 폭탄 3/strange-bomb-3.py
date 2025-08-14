@@ -20,10 +20,10 @@ for n in range(size+1):
             if n == num[j]:
                 cnt += 1
         
-        if max_n < cnt:
+        if max_n < cnt and cnt >= 2:
             number = n
             max_n = cnt
-        elif max_n == cnt and number < n:
+        elif max_n == cnt and number < n and cnt >= 2:
             number = n
             
 
