@@ -12,26 +12,29 @@ for person in range(N):
     temp = list(map(int, seat))
     temp[person] = 1
 
-    # 불가능한 값으로 초기화
-    l_point = -sys.maxsize
-    r_point = sys.maxsize
-
     # 왼쪽 가장 가까운 사람
+    l_point = -1
     for left in range(person - 1, -1, -1):
         if temp[left] == 1:
             l_point = left
             break
 
     # 오른쪽 가장 가까운 사람
+    r_point = -1
     for right in range(person + 1, N):
         if temp[right] == 1:
             r_point = right
             break
 
-    # 거리 계산 (한쪽이 없으면 그쪽 거리는 무한대라서 min에서 제외)
-    dist_left = abs(person - l_point) if l_point != -sys.maxsize else sys.maxsize
-    dist_right = abs(person - r_point) if r_point != sys.maxsize else sys.maxsize
-    min_d = min(dist_left, dist_right)
+    # 거리 계산
+    if l_point == -1 and r_point == -1:
+        continue  # 사람 한 명도 없는 경우
+    elif l_point == -1:
+        min_d = r_point - person
+    elif r_point == -1:
+        min_d = person - l_point
+    else:
+        min_d = min(person - l_point, r_point - person)
 
     max_d = max(max_d, min_d)
 
