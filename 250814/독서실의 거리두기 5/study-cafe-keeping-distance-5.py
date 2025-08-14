@@ -43,4 +43,7 @@ for person in range(N):
 
     max_d = max(max_d, min_d)
 
-print(max_d)
+if max_d == -sys.maxsize:
+    print(0)
+else:
+    print(max_d)
