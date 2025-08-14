@@ -11,20 +11,21 @@ max_n = -sys.maxsize
 
 number = 0
 
-for n in range(size+1):
-    
-    for i in range(N-(K+1)+1):
+for i in range(N-K):
+    arr = num[i:i+K+1]
 
-        cnt = 0
-        for j in range(i, i+K+1):
-            if n == num[j]:
-                cnt += 1
-        
+    dic = {}
+    for elem in arr:
+        if elem in dic:
+            dic[elem] += 1
+        else:
+            dic[elem] = 1
+
+    for n, cnt in dic.items():
         if max_n < cnt and cnt >= 2:
             number = n
             max_n = cnt
-        elif max_n == cnt and number < n and cnt >= 2:
-            number = n
-            
+        elif max_n == cnt and cnt >= 2 and number < n:
+            number = n  
 
 print(number)
