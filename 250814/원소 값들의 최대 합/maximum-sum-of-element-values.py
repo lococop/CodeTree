@@ -7,19 +7,21 @@ import sys
 
 max_n = -sys.maxsize
 
-for start in range(n):
+for start in range(1, n+1):
 
     point = start
 
     total_sum = 0
 
     for num in range(m):
-
         # 위치에 대한 값 합산
         total_sum += arr[point]
 
         # 위치 값 갱신
-        point = arr[point] - 1
+        point = arr[point]
+
+        
+        
     
     max_n = max(max_n, total_sum)
 
