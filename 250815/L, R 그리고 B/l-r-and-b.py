@@ -16,18 +16,20 @@ for i in range(10):
         elif board[i][j] == 'B':
             B_x, B_y = i, j
 
-
+plus = 0 
 if L_x == R_x == B_x and (L_y > R_y > B_y or L_y < R_y < B_y):
     if L_x + 1 >= 0 and L_x+1 < 9:
         L_x += 1
     else:
         L_x -= 1
+    plus += 1
 elif L_y == R_y == B_y and (L_x > R_x > B_x or L_x < R_x < B_x):
     if L_y + 1 >= 0 and L_y+1 < 9:
         L_y += 1
     else:
         L_y -= 1
+    plus += 1
 
 
-print(abs(L_x-B_x) + abs(L_y-B_y) - 1)
+print(abs(L_x-B_x) + abs(L_y-B_y) - 1 + plus)
 
