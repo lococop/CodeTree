@@ -2,6 +2,7 @@ pos = list(map(int, input().split()))
 
 # Please write your code here.
 
+pos.sort()
 if abs(pos[0] - pos[1]) == 1 and abs(pos[1]-pos[2]) == 1:
     print(0)
 
